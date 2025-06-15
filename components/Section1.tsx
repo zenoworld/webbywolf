@@ -5,15 +5,15 @@ import { ArrowRight, Phone } from "lucide-react";
 
 const items = [
   {
-    img: "/images/item1.jpg",
+    img: "/sec1_r_first.png",
     text: "Lorem ipsum dolor sit amet consectetur. Vestibulum ornare fermentum feugiat.",
   },
   {
-    img: "/images/item2.jpg",
+    img: "/sec1_r_sec.png",
     text: "Lorem ipsum dolor sit amet consectetur. Dictum at ac tellus faucibus urna ullamcorper id dui cursus. Venenatis.",
   },
   {
-    img: "/images/item3.jpg",
+    img: "/sec1_r_third.png",
     text: "Lorem ipsum dolor sit amet consectetur. Vestibulum nisi morbi metus gravida eu facilisi enim. Ut diam auctor tortor tincidunt.",
   },
 ];
