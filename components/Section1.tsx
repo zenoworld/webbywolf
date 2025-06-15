@@ -21,10 +21,10 @@ const items = [
 export default function Section1() {
   return (
     <section className="w-full px-6 py-16 bg-white">
-      <div className="max-w-[1280px] mx-auto flex flex-col lg:flex-row gap-8 items-center">
-        {/* Left Content */}
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
+      
         <div className="w-full lg:w-1/2 space-y-6">
-          <p className="text-sm text-[color:var(--color-primary)] font-semibold uppercase">
+          <p className="text-md text-[color:var(--color-primary)] font-bold uppercase">
             Lorem ipsum dolor sit
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-neutral-900">
@@ -39,20 +39,20 @@ export default function Section1() {
 
           <div className="space-y-6 mt-6">
             {items.map((item, index) => (
-              <div key={index} className="flex gap-4 items-start">
+              <div key={index} className="flex gap-4 items-center">
                 <Image
                   src={item.img}
-                  alt={`item-${index}`}
-                  width={80}
-                  height={80}
-                  className="rounded object-cover"
+                  alt="item image"
+                  width={100}
+                  height={100}
+                  className="rounded w-[100px] h-[100px] object-cover"
                 />
-                <p className="text-sm text-gray-800">{item.text}</p>
+                <p className="text-sm  text-gray-800">{item.text}</p>
               </div>
             ))}
           </div>
 
-          <div className="flex gap-6 items-center mt-6">
+          <div className="flex gap-6 items-center mt-8">
             <button className="bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-hover)] text-white px-5 py-2 rounded flex items-center gap-2 text-sm font-semibold shadow">
               Loreum Ipsum
               <ArrowRight size={16} />
@@ -64,14 +64,14 @@ export default function Section1() {
           </div>
         </div>
 
-        {/* Right Image */}
-        <div className="w-full lg:w-1/2">
+       
+        <div className="w-full flex justify-center lg:w-1/2">
           <Image
-            src="/images/bike-section.png"
+            src="/sec1_right.png"
             alt="bikes"
             width={600}
             height={400}
-            className="w-full h-auto rounded"
+            className="w-[70%] h-auto rounded"
           />
         </div>
       </div>
