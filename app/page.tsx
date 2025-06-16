@@ -8,6 +8,8 @@ import Banner2 from "@/components/Banner2";
 import Section4 from "@/components/Section4";
 import Section3 from "@/components/Section3";
 import FormPage from "@/components/FormPage";
+import Mockup from "@/components/Mockup";
+import SectionImg from "@/components/SectionImg";
 
 export default function Home() {
   return <>
@@ -19,5 +21,7 @@ export default function Home() {
     <Section3/>
     <Banner2/>
     <FormPage/>
+    <Mockup/>
+    <SectionImg/>
   </>
 }
