@@ -19,12 +19,12 @@ export default function Banner() {
 
 
                 <div className="absolute top-8 left-8 z-20">
-                    <div className="bg-white px-8 py-2 font-extrabold text-black text-xl shadow">
+                    <div className="bg-gray-300 px-6 py-3 font-bold text-xl text-black">
                         LOGO
                     </div>
                 </div>
 
-                <div className="relative z-30 h-full flex flex-col justify-center items-center text-center  px-6 max-w-5xl mx-auto"> 
+                <div className="relative z-30 h-full flex flex-col justify-center items-center text-center  px-6 max-w-5xl mx-auto">
                     <h1 className="text-2xl md:text-4xl font-bold leading-tight ">
                         LOREM IPSUM DOLOR SIT AMET CONSECTETUR. QUIS ADIPISCING PURUS EGESTAS ALIQUAM VIVERRA MI.
                     </h1>
@@ -34,7 +34,7 @@ export default function Banner() {
                     </p>
 
                     <p className="mt-4 text-lg md:text-lg max-w-[80%]">
-                       Lorem ipsum dolor sit amet consectetur. Volutpat in dictum nec condimentum ultrices non. Ornare semper in tincidunt pellentesque cras mauris in vitae. At viverra quis eu malesuada vel et porttitor. Nulla luctus quam lacus lacus non at. Tincidunt morbi feugiat a pulvinar euismod natoque nulla ligula. Tincidunt cursus vitae leo.
+                        Lorem ipsum dolor sit amet consectetur. Volutpat in dictum nec condimentum ultrices non. Ornare semper in tincidunt pellentesque cras mauris in vitae. At viverra quis eu malesuada vel et porttitor. Nulla luctus quam lacus lacus non at. Tincidunt morbi feugiat a pulvinar euismod natoque nulla ligula. Tincidunt cursus vitae leo.
                     </p>
                 </div>
             </div>
