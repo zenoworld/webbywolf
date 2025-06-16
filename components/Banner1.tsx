@@ -1,13 +1,13 @@
 'use client';
 import Image from 'next/image';
 
-export default function Banner() {
+export default function Banner2() {
     return (
         <section className="relative h-screen w-full text-white flex justify-center items-center">
             <div className='w-full h-[90%] relative '>
 
                 <Image
-                    src="/banner_bg.png"
+                    src="/banner/banner1_bg.png"
                     alt="Motorbike Banner"
                     layout="fill"
                     objectFit="cover"

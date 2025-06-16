@@ -21,6 +21,9 @@ h1, h2, h3 {
 .primary-btn-hover{
   @apply bg-[var(--color-primary-hover)] text-white rounded-md flex items-center gap-2 shadow-md px-5 py-3;
 }
+/* .section_heading {
+  @apply text-md text-[color:var(--color-primary)] font-bold uppercase
+} */
 .clip-hero {
   clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
 }

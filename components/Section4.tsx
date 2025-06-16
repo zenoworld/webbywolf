@@ -22,7 +22,7 @@ const Section4 = () => {
   return (
     <section className="py-16">
       <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-10 uppercase px-20">
+        <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-10 uppercase px-20">
          Lorem ipsum dolor sit amet consectetur. Commodo leo amet.
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-8 items-center justify-center">
@@ -31,7 +31,7 @@ const Section4 = () => {
               <Image
                 src={brand.src}
                 alt={brand.alt}
-                width={80}
+                width={100}
                 height={80}
                 className="object-contain hover:grayscale-0 transition duration-300"
               />
