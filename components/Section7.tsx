@@ -1,14 +1,28 @@
+'use client'
+
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { motion } from "framer-motion"
 
 export default function Section7() {
   return (
-    <section className="relative w-full px-0  lg:px-15 xl:px-20 py-10 sm:py-20 min-h-screen bg-[#F8F8F8] flex items-center justify-center mb-8">
+    <motion.section
+      className="relative w-full px-0 lg:px-15 xl:px-20 py-10 sm:py-20 min-h-screen bg-[#F8F8F8] flex items-center justify-center mb-8"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.3 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="w-full flex flex-col lg:flex-row">
 
-
-        <div className="w-full lg:w-1/2 hidden lg:block">
+        <motion.div 
+          className="w-full lg:w-1/2 hidden lg:block"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <Image
             src="/sec7.png"
             alt="Riders"
@@ -16,11 +30,15 @@ export default function Section7() {
             height={600}
             className="w-[80%] h-[80%] object-cover"
           />
-        </div>
+        </motion.div>
 
-
-        <div className="w-full lg:w-1/2 flex flex-col justify-start md:justify-end px-4 md:px-8 py-10 lg:px-16 relative">
-
+        <motion.div 
+          className="w-full lg:w-1/2 flex flex-col justify-start md:justify-end px-4 md:px-8 py-10 lg:px-16 relative"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
 
           <div className="absolute inset-0 z-0 block lg:hidden">
             <Image
@@ -29,10 +47,8 @@ export default function Section7() {
               fill
               className="object-cover w-full h-full"
             />
-
             <div className="absolute inset-0 bg-black/70 bg-opacity-60 z-20"></div>
           </div>
-
 
           <div className="relative z-30">
             <p className="text-[#1959AC] font-semibold text-md mb-2">Lorem ipsum</p>
@@ -56,8 +72,8 @@ export default function Section7() {
               Lorem Ipsum <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

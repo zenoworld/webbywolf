@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Section8() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [cardsPerView, setCardsPerView] = useState(4); // default for xl
+    const [cardsPerView, setCardsPerView] = useState(4);
 
     useEffect(() => {
         const updateCardsPerView = () => {
@@ -16,7 +17,7 @@ export default function Section8() {
             } else if (width >= 768) {
                 setCardsPerView(2);
             } else {
-                setCardsPerView(1); // sm
+                setCardsPerView(1);
             }
         };
 
@@ -43,8 +44,13 @@ export default function Section8() {
     }
 
     return (
-        <section className="section min-h-screen bg-[#0546D2]">
-
+        <motion.section
+            className="section min-h-screen bg-[#0546D2]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+        >
             <div className="w-full">
 
                 <div className="flex justify-between items-start flex-col md:flex-row mb-12">
@@ -56,30 +62,29 @@ export default function Section8() {
                             <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">
                                 LOREM IPSUM DOLOR SIT AMET
                             </h2>
-                            <button 
-                            className="bg-white text-black rounded px-10 sm:px-16 py-2 font-semibold hover:opacity-90 mb-4 md:mt-0">
+                            <button className="bg-white text-black rounded px-10 sm:px-16 py-2 font-semibold hover:opacity-90 mb-4 md:mt-0">
                                 Lorem Ipsum
                             </button>
                         </div>
                         <p className="text-[#CFE0FF] max-w-2xl">
-                            Dui euismod iaculis libero, aliquet vitae et elementum porttitor.
-                            Eleifend mi tristique condimentum congue fusce nunc, donec magnis
-                            commodo.
+                            Dui euismod iaculis libero, aliquet vitae et elementum porttitor. Eleifend mi tristique condimentum congue fusce nunc, donec magnis commodo.
                         </p>
                     </div>
                 </div>
 
-              
                 <div className={`grid gap-6 transition-all duration-300 ${cardsPerView === 1 ? 'grid-cols-1' :
                     cardsPerView === 2 ? 'grid-cols-2' :
                         cardsPerView === 3 ? 'grid-cols-3' :
                             'grid-cols-4'
                     }`}>
                     {visibleCards.map((card, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className={`bg-white rounded-lg px-6 py-8 shadow-sm flex flex-col justify-between h-full ${index === currentIndex ? "xl:scale-y-110" : ""
-                                }`}
+                            className={`bg-white rounded-lg px-6 py-8 shadow-sm flex flex-col justify-between h-full ${index === currentIndex ? "xl:scale-y-110" : ""}`}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: false, amount: 0.2 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
                         >
                             <div>
                                 <div className="text-[#0546D2] text-3xl mb-2">
@@ -97,13 +102,12 @@ export default function Section8() {
                                 />
                                 <p className="font-semibold">{card.name}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
-               
                 {cardsPerView !== 4 && (
-                    <div className="flex justify-center gap-8 py-8 ">
+                    <div className="flex justify-center gap-8 py-8">
                         <div
                             onClick={handlePrev}
                             className="w-[48px] h-[48px] rounded-full border-2 border-white text-white text-2xl flex justify-center items-center rotate-180 cursor-pointer"
@@ -120,16 +124,14 @@ export default function Section8() {
                 )}
             </div>
 
-            <div className="xl:flex justify-start hidden gap-4 py-12 ">
+            <div className="xl:flex justify-start hidden gap-4 py-12">
                 <div onClick={handlePrev} className="w-[48px] h-[48px] rounded-full border-2 border-white text-white text-2xl flex justify-center items-center rotate-180 cursor-pointer">→</div>
                 <div onClick={handleNext} className="w-[48px] h-[48px] rounded-full border-2 border-white text-white text-2xl flex justify-center items-center pb-2 cursor-pointer">→</div>
-
             </div>
 
-        </section>
+        </motion.section>
     );
 }
-
 
 const cards = [
     {

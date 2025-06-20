@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ArrowRight, Phone } from "lucide-react";
+import { motion } from "framer-motion";
 
 const items = [
   {
@@ -21,13 +22,20 @@ const items = [
 export default function Section1() {
   return (
     <section className="section bg-white">
-      <div className="max-w-7xl  flex flex-col lg:flex-row gap-8 items-center">
-      
-        <div className="w-full lg:w-1/2 space-y-6">
+      <div className="max-w-7xl flex flex-col lg:flex-row gap-8 items-center">
+
+
+        <motion.div
+          className="w-full lg:w-1/2 space-y-6"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+        >
           <p className="text-md text-[color:var(--color-primary)] font-bold uppercase">
             Lorem ipsum dolor sit
           </p>
-          <h2 className="text-3xl sm:text-4xl  font-bold text-neutral-900">
+          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900">
             LOREM IPSUM <br />
             DOLOR SIT AMET
           </h2>
@@ -39,7 +47,12 @@ export default function Section1() {
 
           <div className="space-y-6 mt-6">
             {items.map((item, index) => (
-              <div key={index} className="flex gap-4 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 * index, ease: 'easeInOut' }}
+                key={index}
+                className="flex gap-4 items-center">
                 <Image
                   src={item.img}
                   alt="item image"
@@ -47,8 +60,8 @@ export default function Section1() {
                   height={100}
                   className="rounded w-[100px] h-[100px] object-cover"
                 />
-                <p className="text-sm  text-gray-800">{item.text}</p>
-              </div>
+                <p className="text-sm text-gray-800">{item.text}</p>
+              </motion.div>
             ))}
           </div>
 
@@ -62,10 +75,16 @@ export default function Section1() {
               123456789
             </div>
           </div>
-        </div>
+        </motion.div>
 
-       
-        <div className="w-full flex justify-center lg:w-1/2">
+
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full flex justify-center lg:w-1/2"
+        >
           <Image
             src="/sec1_right.png"
             alt="bikes"
@@ -73,7 +92,8 @@ export default function Section1() {
             height={400}
             className="w-[70%] h-auto rounded"
           />
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-
+import { motion } from 'framer-motion';
 export default function Banner2() {
     return (
         <section className="relative h-screen w-full text-white flex justify-center items-center">
@@ -24,12 +24,16 @@ export default function Banner2() {
                     </div>
                 </div>
 
-                <div className="relative z-30 h-full flex flex-col justify-center items-center text-center  px-6 max-w-3xl mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.3}}
+                    transition={{ duration: 1.5 }} className="relative z-30 h-full flex flex-col justify-center items-center text-center  px-6 max-w-3xl mx-auto">
                     <h1 className="text-2xl sm:text-4xl font-bold leading-tight uppercase">
                         dolor sit amet consectetur. Quis adipiscing purus egestas aliquam viverra mi. dolor sit amet consectetur. Quis adipiscing 
                     </h1>
 
-                </div>
+                </motion.div>
             </div>
 
         </section>
