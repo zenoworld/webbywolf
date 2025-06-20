@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 
-export default function FormPage() {
+export default function Section5() {
     const {
         register,
         handleSubmit,

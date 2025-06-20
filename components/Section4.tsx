@@ -43,6 +43,8 @@ export default function Section4() {
                             <Image
                                 src={card.image}
                                 alt={card.title}
+                                width={100}
+                                height={100}
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-4">
