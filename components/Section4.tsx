@@ -1,5 +1,5 @@
 // app/components/CardSection.tsx
-
+import Image from "next/image";
 const cards = [
     {
         image: "/sec_3/img1.png",
@@ -40,7 +40,11 @@ export default function Section4() {
                 <div className="lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-12">
                     {cards.map((card, index) => (
                         <div key={index} className="bg-white rounded-lg shadow-xl overflow-hidden mb-10">
-                            <img src={card.image} alt={card.title} className="w-full h-48 object-cover" />
+                            <Image
+                                src={card.image}
+                                alt={card.title}
+                                className="w-full h-48 object-cover"
+                            />
                             <div className="p-4">
                                 <h3 className="font-bold text-sm mb-2">{card.title}</h3>
                                 <p className="text-sm text-gray-700 mb-4 ">{card.description}</p>
