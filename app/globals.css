@@ -56,6 +56,9 @@ h1, h2, h3 {
 .primary-btn-hover{
   @apply bg-[var(--color-primary-hover)] text-white rounded-md flex items-center gap-2 shadow-md px-5 py-3;
 }
+.section{
+  @apply relative w-full px-4 md:px-10 lg:px-15 xl:px-20 py-10 sm:py-20
+}
 /* .section_heading {
   @apply text-md text-[color:var(--color-primary)] font-bold uppercase
 } */

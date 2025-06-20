@@ -20,14 +20,14 @@ const items = [
 
 export default function Section1() {
   return (
-    <section className="w-full px-6 py-16 bg-white">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-center">
+    <section className="section bg-white">
+      <div className="max-w-7xl  flex flex-col lg:flex-row gap-8 items-center">
       
         <div className="w-full lg:w-1/2 space-y-6">
           <p className="text-md text-[color:var(--color-primary)] font-bold uppercase">
             Lorem ipsum dolor sit
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900">
+          <h2 className="text-3xl sm:text-4xl  font-bold text-neutral-900">
             LOREM IPSUM <br />
             DOLOR SIT AMET
           </h2>
@@ -52,12 +52,12 @@ export default function Section1() {
             ))}
           </div>
 
-          <div className="flex gap-6 items-center mt-8">
-            <button className="bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-hover)] text-white px-5 py-2 rounded flex items-center gap-2 text-sm font-semibold shadow">
+          <div className="flex flex-col sm:flex-row gap-6 items-center mt-8">
+            <button className="bg-[color:var(--color-primary)] hover:bg-[color:var(--color-primary-hover)] cursor-pointer text-white px-5 py-2 rounded flex items-center gap-2 text-sm font-semibold shadow">
               Loreum Ipsum
               <ArrowRight size={16} />
             </button>
-            <div className="flex items-center gap-2 text-sm text-[color:var(--color-primary)] font-semibold">
+            <div className="flex cursor-pointer items-center gap-2 text-sm text-[color:var(--color-primary)] font-semibold">
               <Phone size={16} />
               123456789
             </div>

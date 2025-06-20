@@ -1,75 +1,165 @@
-'use client'
+"use client";
+import { useForm } from "react-hook-form";
 
-import Image from 'next/image'
-import React from 'react'
+export default function FormPage() {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
 
-const features = [
-  {
-    icon: '/sec5_l.png',
-    title: 'Lorem ipsum dolor sit amet consectetur. Volutpat hac morbi egestas.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Eros egestas et arcu eu non viverra. Risus quam mattis senectus vitae interdum odio ornare gravida vestibulum. Donec turpis nulla felis mauris eu donec. Ipsum sit ut tortor.',
-  },
-  {
-    icon: '/sec5_l.png',
-    title: 'Lorem ipsum dolor sit amet consectetur. Volutpat hac morbi egestas.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Eros egestas et arcu eu non viverra. Risus quam mattis senectus vitae interdum odio ornare gravida vestibulum. Donec turpis nulla felis mauris eu donec. Ipsum sit ut tortor.',
-  },
-  {
-    icon: '/sec5_l.png',
-    title: 'Lorem ipsum dolor sit amet consectetur. Volutpat hac morbi egestas.',
-    description:
-      'Lorem ipsum dolor sit amet consectetur. Eros egestas et arcu eu non viverra. Risus quam mattis senectus vitae interdum odio ornare gravida vestibulum. Donec turpis nulla felis mauris eu donec. Ipsum sit ut tortor.',
-  },
-]
+    const onSubmit = (data: any) => {
+        console.log("Form Data:", data);
+    };
 
-export default function Section5() {
-  return (
-    <section className="w-full py-20 px-4 lg:px-16 bg-white">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12">
-      
-        <div>
-          <p className="text-md text-[color:var(--color-primary)] font-bold uppercase mb-4">Lorem ipsum dolor sit amet</p>
-          <h2 className="text-4xl font-extrabold text-[#222222] mb-4 leading-tight">
-            LOREM IPSUM DOLOR SIT<br/> AMET CONSECTETUR. EU<br/> ELIT.
-          </h2>
-          <p className="text-[#222222] mb-6 text-base">
-            Lorem ipsum dolor sit amet consectetur. Mauris ullamcorper etiam leo eleifend
-            condimentum in vitae faucibus. Amet massa malesuada sit pretium. Donec pharetra erat
-            lacus suspendisse ornare.
-          </p>
+    return (
+        <section className="max-w-5xl h-auto mx-auto px-4 py-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-20">
+                REQUEST A QUOTE
+            </h2>
 
-          <div className="space-y-6">
-            {features.map((feature, index) => (
-              <div key={index} className="flex gap-4">
-                <Image
-                  src={feature.icon}
-                  alt="Feature Icon"
-                  width={40}
-                  height={40}
-                  className="min-w-[40px] max-h-[40px]"
-                />
-                <div className='relative'>
-                  <h3 className="font-semibold text-[#222222]">{feature.title}</h3>
-                  <p className="text-sm text-[#222222] mt-1 w-[90%]">{feature.description}</p>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+
+                    <div>
+                        <label className="block mb-2 text-sm font-medium text-gray-700">
+                            Name
+                        </label>
+                        <input
+                            type="text"
+
+                            {...register("name")}
+                            className="w-full border border-gray-300 p-3 rounded-md bg-gray-100"
+                        />
+                    </div>
+
+
+
+                    <div>
+                        <label className="block mb-2 text-sm font-medium text-gray-700">
+                            E-mail
+                        </label>
+                        <input
+                            type="email"
+
+                            {...register("email")}
+                            className="w-full border border-gray-300 p-3 rounded-md bg-gray-100"
+                        />
+                    </div>
+
+
+
+                    <div>
+                        <label className="block mb-2 text-sm font-medium text-gray-700">
+                            Phone Number
+                        </label>
+                        <input
+                            type="tel"
+
+                            {...register("phone")}
+                            className="w-full border border-gray-300 p-3 rounded-md bg-gray-100"
+                        />
+                    </div>
+
+
+                    <div>
+                        <label className="block mb-2 text-sm font-medium text-gray-700">
+                            Time Frame
+                        </label>
+                        <select
+                            {...register("timeFrame", { required: true })}
+                            className="w-full border border-gray-300 p-3 rounded-md bg-gray-100"
+                        >
+                            <option value="">Choose Time Frame</option>
+                            <option value="1-2 weeks">1-2 Weeks</option>
+                            <option value="1 month">1 Month</option>
+                            <option value="More than 1 month">More than 1 Month</option>
+                        </select>
+                        {errors.timeFrame && (
+                            <p className="text-red-500 text-sm">This field is required</p>
+                        )}
+                    </div>
+
+
+
+                    <div>
+                        <label className="block mb-2 text-sm font-medium text-gray-700">
+                            Size
+                        </label>
+                        <select
+                            {...register("size", { required: true })}
+                            className="w-full border border-gray-300 p-3 rounded-md bg-gray-100"
+                        >
+                            <option value="" >Choose Size</option>
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                        {errors.size && (
+                            <p className="text-red-500 text-sm">This field is required</p>
+                        )}
+                    </div>
+
+
+
+                    <div>
+                        <label className="block mb-2 text-sm font-medium text-gray-700">
+                            Quantity
+                        </label>
+                        <select
+                            {...register("quantity", { required: true })}
+                            className="w-full border border-gray-300 p-3 rounded-md bg-gray-100"
+                        >
+                            <option value="">Choose Quantity</option>
+                            <option value="1-10">1-10</option>
+                            <option value="10-50">10-50</option>
+                            <option value="50+">50+</option>
+                        </select>
+                        {errors.quantity && (
+                            <p className="text-red-500 text-sm">This field is required</p>
+                        )}
+                    </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        
-        <div className="w-full flex items-center justify-center  ">
-          <Image
-            src="/sec5_r.png" 
-            alt="Two men talking"
-            width={600}
-            height={500}
-            className="w-[80%] h-auto rounded"
-          />
-        </div>
-      </div>
-    </section>
-  )
+                <div>
+                    <label className="block mb-2 text-sm font-medium text-gray-700">
+                        Please Describe Your Project
+                    </label>
+                    <textarea
+                        rows={6}
+                        placeholder="Please Describe Your Project"
+                        {...register("description", { required: true })}
+                        className="w-full border border-gray-300 p-3 rounded-md bg-gray-100"
+                    />
+                    {errors.description && (
+                        <p className="text-red-500 text-sm mt-1">
+                            This field is required
+                        </p>
+                    )}
+                </div>
+
+                <p className="text-sm text-center text-gray-600">
+                    By submitting this form you agree to our{" "}
+                    <a href="#" className="underline">
+                        Terms of Service
+                    </a>{" "}
+                    and{" "}
+                    <a href="#" className="underline">
+                        Privacy Policy
+                    </a>
+                    .
+                </p>
+
+                <div className="text-center">
+                    <button
+                        type="submit"
+                        className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-semibold shadow-lg transition-all"
+                    >
+                        Lorem Ipsum <img src="/right.png" alt="Arrow Right" className="inline-block w-6 h-4 ml-2" />
+                    </button>
+                </div>
+            </form>
+        </section>
+    );
 }
