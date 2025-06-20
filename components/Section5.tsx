@@ -157,7 +157,7 @@ export default function Section5() {
                         type="submit"
                         className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-md font-semibold shadow-lg transition-all"
                     >
-                        Lorem Ipsum <img src="/right.png" alt="Arrow Right" className="inline-block w-6 h-4 ml-2" />
+                        Lorem Ipsum <Image src="/right.png" alt="Arrow Right" width={100} height={100} className="inline-block w-6 h-4 ml-2" />
                     </button>
                 </div>
             </form>
