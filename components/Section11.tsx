@@ -24,7 +24,7 @@ export default function Section11() {
                     className="object-cover w-full  md:w-1/2 h-full block md:absolute left-0 top-0"
                 />
                 <div className="w-full md:w-[55%] h-full relative flex items-center justify-center">
-                    <div className="h-2/3  rounded-md shadow-xl p-8 sm:p-12 ">
+                    <div className="h-2/3  rounded-md shadow-xl p-8 sm:p-12 bg-white">
                         <h3 className="font-semibold text-xl text-[#475569] mb-4">
                             Artist & Investor
                         </h3>
